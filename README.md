@@ -1,0 +1,2 @@
+# PlayWright
+Autotests practice
