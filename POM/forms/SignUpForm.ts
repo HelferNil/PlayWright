@@ -46,10 +46,6 @@ export default class SignUpForm{
     async checkErrorColorRePassword() {
         await expect(this.rePasswordField).toHaveCSS("border-color", "rgb(220, 53, 69)");
     }
-
-
-
-
     async regBtnIsDisabled() {
         await expect(this.registerButton).toBeDisabled();
     }

@@ -19,7 +19,7 @@ test.describe("My tests", () => {
       await signUpForm.emailField.fill(`testemail+${Date.now()}@google.com`);
       await signUpForm.passwordField.fill("Strongpass1");
       await signUpForm.rePasswordField.fill("Strongpass1");
-      await signUpForm.registerButton.click();
+      //await signUpForm.registerButton.click();
     });
   });
   test.describe("Name field tests", () => {
@@ -195,5 +195,10 @@ test.describe("My tests", () => {
       await signUpForm.checkErrorColorRePassword();
       await signUpForm.regBtnIsDisabled();
     });
+
+    test("Re-passwch", async () => {
+      await homePage.openGarage();
+    });
+
   });
 });
