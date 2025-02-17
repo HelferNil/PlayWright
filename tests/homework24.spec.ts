@@ -24,6 +24,8 @@ test.describe("My tests", () => {
   });
   test.describe("Name field tests", () => {
     test("Name is empty", async () => {
+      console.log(process.env.USER_NAME);
+      console.log(process.env.PASSWORD);
       await signUpForm.clickSignUpButton();
       await signUpForm.nameField.focus();
       await signUpForm.nameField.blur();
