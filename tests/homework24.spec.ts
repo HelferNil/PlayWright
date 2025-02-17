@@ -195,10 +195,5 @@ test.describe("My tests", () => {
       await signUpForm.checkErrorColorRePassword();
       await signUpForm.regBtnIsDisabled();
     });
-
-    test("Re-passwch", async () => {
-      await homePage.openGarage();
-    });
-
   });
 });

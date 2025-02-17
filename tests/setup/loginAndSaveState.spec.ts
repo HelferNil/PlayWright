@@ -16,6 +16,7 @@ test.describe("My garage", () => {
     test("Log in", async ({ page }) => {
       await homePage.clickSignInButton();
       await signInForm.login("test1739061026459@test.io", "Very1strong");
+      await page.waitForTimeout(500);
       await page.context().storageState({ path: "userOneState.json" });
     });
   });
