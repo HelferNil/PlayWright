@@ -37,6 +37,10 @@ export default defineConfig({
     httpCredentials: {
       username: process.env.LOGIN || "",
       password: process.env.PASSWORD || "",
+    
+
+
+
     },
   },
 
