@@ -26,9 +26,6 @@ test.describe("My tests", () => {
       await garagePage.clickAddCarButton();
       await addCarForm.addCar('BMW','Z3','55');
       await expect(garagePage.firstCar).toContainText('BMW Z3');
-
-
-
     });
   });
 });
