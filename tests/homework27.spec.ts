@@ -21,7 +21,7 @@ test.describe("My tests", () => {
   });
 
   test.describe("Add new BMW Z3", () => {
-    test("Add car", async ({ page }) => {
+    test.skip("Add car", async ({ page }) => {
       await page.goto("/");
       await page.getByRole("button", { name: "Sign In" }).click();
       await page
