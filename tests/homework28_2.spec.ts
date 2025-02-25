@@ -19,13 +19,8 @@ test.describe("Request", () => {
           remember: false,
         },
       });
-
       const responseAuthJson = await responseAuth.json();
-      console.log(await request.storageState());
-      console.log(responseAuthJson);
-
       const responseCars = await request.get("/api/cars");
-      console.log(await responseCars.json());
     });
   });
 });
