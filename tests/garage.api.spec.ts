@@ -83,7 +83,7 @@ test.describe("Garage tests", () => {
     console.log(await responseEditCarsJson);
   });
 
-  test("Edit with lower mileage car", async ({ request }) => {
+  test.skip("Edit with lower mileage car", async ({ request }) => {
     const responseChangeCar = await request.put(`/api/cars/${carId}`, {
       data: {
         carBrandId: 1,

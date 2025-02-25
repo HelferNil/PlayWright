@@ -9,13 +9,11 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install chromium --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t playwright-tests .
+      - name: Run tests inside Docker container
+        run: docker run playwright-tests
+      - name: Run tests with volume
+        run: docker run -v ${{ github.workspace }}/test-results:/app/test-results playwright-tests
