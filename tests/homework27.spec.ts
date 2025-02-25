@@ -21,11 +21,18 @@ test.describe("My tests", () => {
   });
 
   test.describe("Add new BMW Z3", () => {
-    test("Add car", async () => {
+    test("Add car", async ({ page }) => {
+      await page.goto("/");
+      await page.getByRole("button", { name: "Sign In" }).click();
+      await page
+        .locator('//*[@id="signinEmail"]')
+        .fill("test1739061026459@test.io");
+      await page.locator('//*[@id="signinPassword"]').fill("Very1strong");
+      await page.getByRole("button", { name: "Login" }).click();
       await homePage.openGarage();
       await garagePage.clickAddCarButton();
-      await addCarForm.addCar('BMW','Z3','55');
-      await expect(garagePage.firstCar).toContainText('BMW Z3');
+      await addCarForm.addCar("BMW", "Z3", "55");
+      await expect(garagePage.firstCar).toContainText("BMW Z3");
     });
   });
 });
